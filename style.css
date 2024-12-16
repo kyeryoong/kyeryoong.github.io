@@ -1,6 +1,6 @@
 * {
     font-family: 'Pretendard';
-    font-weight: 400;
+    font-weight: 300;
 
     margin: 0px;
     padding: 0px;
@@ -11,19 +11,35 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(200, 200, 200);
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
 }
 
-
+:root {
+    --gray: #909090;
+    --pink: #ff8080;
+    --blue: #4dd2ff;
+}
 
 body {
     width: 100%;
     max-width: 60rem;
     margin: auto;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 120px;
+    padding-bottom: 120px;
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 120px;
 }
 
 h1 {
@@ -34,55 +50,110 @@ h1 {
 h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 36px;
 }
 
 h3 {
     font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 24px;
 }
 
 h4 {
     font-size: 1.15rem;
     font-weight: 700;
-    margin-bottom: 12px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
 }
 
 #sectionWrapper {
     display: flex;
     flex-direction: row;
-    gap: 60px;
+    gap: 40px;
 }
 
 #sectionTitle {
-    width: 300px;
-
+    width: 270px;
 }
 
-#listWrapper {
-    list-style: none;
+#sectionContent {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 100px;
 }
 
-#sublistWrapper {
-    list-style: none;
+#descriptionWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-#sublistItem {
-    margin-bottom: 24px;
+#descriptionText {
+    font-size: 1.1rem;
+    line-height: 24px;
+    color: var(--gray);
 }
 
-#sublistContent {
+#descriptionList {
     list-style: inside;
-    color: gray;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    line-height: 28px;
+
+    h4 {
+        margin-bottom: 8px;
+    }
+
+    li,
+    p {
+        font-size: 1.1rem;
+        color: var(--gray);
+        margin-left: 22px;
+        text-indent: -18px;
+        word-break: keep-all;
+    }
 
     ::marker {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
+    }
+}
+
+#before {
+    text-indent: 0px !important;
+    list-style: none;
+
+    label {
+        font-size: 0.9rem;
+        border-radius: 4px;
+        padding: 3px 4px;
+        color: white;
+        background-color: var(--pink);
+        margin-right: 4px;
+
+        &::before {
+            content: 'Before';
+        }
+    }
+}
+
+#after {
+    text-indent: 0px !important;
+    list-style: none;
+    margin-bottom: 12px;
+
+    label {
+        font-size: 0.9rem;
+        border-radius: 4px;
+        padding: 3px 4px;
+        color: white;
+        background-color: var(--blue);
+        margin-right: 14.5px;
+
+        &::before {
+            content: 'After';
+        }
     }
 }
